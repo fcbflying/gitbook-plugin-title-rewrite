@@ -27,7 +27,9 @@ function makeTitle() {
 	console.log("####### make tiltle ####");
   var rootDir = this.output.root();
   var ignoreDir = rootDir + "/" + "gitbook";
+  console.log("root dir: "+rootDir);	
   var batchModify = function(rootDir){
+    console.log("####call batch modify####");	  
     fs.readdir(rootDir, function(err,files){
       console.log("file amount: "+files.length);	    
       for(var i=0; i<files.length; i++) {
