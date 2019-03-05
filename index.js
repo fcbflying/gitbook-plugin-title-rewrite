@@ -43,6 +43,7 @@ function makeTitle() {
             if (match2) {
               data = data.replace(match2[0], '');
               var seoDesc = '<title>'+htmlent.Html5Entities.decode(match2[1]) + '</title>';
+	      console.log("seoDesc:  "+seoDesc);
               data = data.replace(match1[0], seoDesc);
               fs.writeFileSync(fpath, data, 'utf-8');
             }
