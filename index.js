@@ -15,8 +15,11 @@ function processTitle(page) {
   if(match = titleRule.exec(page.content)) {
     var rawBlock = match[0];
     var seoBlock = match[1].replace(/[\r\n]/mg, "");
+    console.log("rawBlock: "+ rawBlock);	  
+    console.log("seoBlock: "+ seoBlock);	  
     //seoBlock = htmlent.Html5Entities.decode(seoBlock);
     page.content = page.content.replace(rawBlock, '<div id="meta-title---">' + seoBlock + '</div>');
+    console.log("page.content: "+page.content);	  
   }
   return page;
 }
