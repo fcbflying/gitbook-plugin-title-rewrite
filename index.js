@@ -30,17 +30,24 @@ function makeTitle() {
   var batchModify = function(rootDir){
     fs.readdir(rootDir, function(err,files){
       for(var i=0; i<files.length; i++) {
+	console.log("file indez: "+i);      
         var file = files[i];
         var fpath = rootDir + "/" + file;
+	console.log("file path: "+fpath);      
         if (/\.html$/.test(file)) {
           var data = fs.readFileSync(fpath, 'utf-8');
+	  console.log(""#######data begin#########);	
+	  console.log(data);	          
+          console.log(""#######data end#########);	
           var rule =/<title>.*<\/title>/;
           var rule2 = /<div id="meta-title---">([^>]+)?<\/div>/;
           var match1, match2, match3, match4;
           match1 = rule.exec(data);
+          console.log("####match1: "+match1);		
           if (match1) {
             match2 = rule2.exec(data, match1[0].index + match1[0].length);
             if (match2) {
+	      console.log("####match2: "+match2);		     
               data = data.replace(match2[0], '');
               var seoDesc = '<title>'+htmlent.Html5Entities.decode(match2[1]) + '</title>';
 	      console.log("seoDesc:  "+seoDesc);
