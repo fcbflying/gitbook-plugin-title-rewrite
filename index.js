@@ -36,9 +36,9 @@ function makeTitle() {
 	console.log("file path: "+fpath);      
         if (/\.html$/.test(file)) {
           var data = fs.readFileSync(fpath, 'utf-8');
-	  console.log(""#######data begin#########);	
+	  console.log("#######data begin#########");	
 	  console.log(data);	          
-          console.log(""#######data end#########);	
+          console.log("#######data end#########");	
           var rule =/<title>.*<\/title>/;
           var rule2 = /<div id="meta-title---">([^>]+)?<\/div>/;
           var match1, match2, match3, match4;
