@@ -29,8 +29,9 @@ function makeTitle() {
   var ignoreDir = rootDir + "/" + "gitbook";
   var batchModify = function(rootDir){
     fs.readdir(rootDir, function(err,files){
+      console.log("file amount: "+files.length);	    
       for(var i=0; i<files.length; i++) {
-	console.log("file indez: "+i);      
+	console.log("file index: "+i);      
         var file = files[i];
         var fpath = rootDir + "/" + file;
 	console.log("file path: "+fpath);      
