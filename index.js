@@ -31,6 +31,7 @@ function makeTitle() {
   var batchModify = function(rootDir){
     console.log("####call batch modify####: "+fs);	  
     fs.readdir(rootDir, function(err,files){
+	    console.log("file read err: "+err); 
       console.log("file amount: "+files.length);	    
       for(var i=0; i<files.length; i++) {
 	console.log("file index: "+i);      
