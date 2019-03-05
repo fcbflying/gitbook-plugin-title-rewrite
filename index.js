@@ -10,6 +10,7 @@ const htmlent = require('html-entities');
 const fs = require('fs');
 
 function processTitle(page) {
+  console.log("=============will  process title==========");
   var match;
   if(match = titleRule.exec(page.content)) {
     var rawBlock = match[0];
@@ -20,6 +21,7 @@ function processTitle(page) {
   return page;
 }
 function makeTitle() {
+    console.log("==========will  make title=========");	
   var rootDir = this.output.root();
   var ignoreDir = rootDir + "/" + "gitbook";
   var batchModify = function(rootDir){
